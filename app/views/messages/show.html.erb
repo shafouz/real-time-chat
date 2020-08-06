@@ -1,0 +1,12 @@
+<h1 id="title">Chatroom</h1>
+
+<%= form_with model: Message.new, url: "/messages", method: :post do |form| %>
+  <%= form.text_field :text %>
+  <%= hidden_field_tag :id, value = @chatroom.id %>
+  <%= form.submit "Submit" %>
+<% end %>
+
+<p> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </p>
+
+<%= render partial: "message", locals: { message: @message, chatroom: @chatroom.id } %>
+

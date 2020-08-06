@@ -1,5 +1,5 @@
-<div class="chatroom">
-  <% Message.all.each do |m| %>
+<div id="chatroom-<%= chatroom %>">
+  <% message.each do |m| %>
     <p><%= m.created_at %>: <%= m.text %></p>
   <% end %>
 </div>

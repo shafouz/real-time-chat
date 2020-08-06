@@ -1,0 +1,4 @@
+<% @chatrooms.each do |c| %>
+  <%= link_to "Join chatroom #{c.id}", message_path(c.id) %>
+  <br>
+<% end %>

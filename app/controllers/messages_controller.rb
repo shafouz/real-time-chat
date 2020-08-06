@@ -1,14 +1,13 @@
 class MessagesController < ApplicationController
-  def index
-    @messages = Message.all
-  end
 
-  def new
-    @message = Message.new
+  def show
+    @chatroom = Chatroom.find(params[:id])
+    @message = @chatroom.messages
   end
 
   def create
-    @message = Message.new(message_params).save
+    @chatroom = Chatroom.find(params[:id].to_i)
+    @message = @chatroom.messages.create(message_params).save
   end
 
   private
